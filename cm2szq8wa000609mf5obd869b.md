@@ -140,7 +140,7 @@ resource "aws_vpc_security_group_ingress_rule" "ssh" {
 }
 ```
 
-Since the IP requires a CIDR notation, we use
+Since the Security Group requires a proper CIDR notation, we use
 
 ```bash
 "${data.external.my_ip.result["ip"]}/32"
