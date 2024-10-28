@@ -8,11 +8,9 @@ tags: terraform-aws-infrastructureascode-provisioning-automation-cloudcomputing
 
 ---
 
-Security is of paramount importance. How many times have we seen or heard in our organisations that we should **“NEVER”** allow complete internet access to our security group??
+Security is of paramount importance. How many times have we seen or heard that we should **“NEVER”** allow complete internet access to our security group??
 
-We mostly short list or in secure terms whitelist those IPs.
-
-Now imagine you are a person who is doing hands-on in AWS and do not want to create a security group with open internet as you Ingress or Inbound rule. How do you achieve it.
+So now you are doing AWS Hands-on and would like to create and attach a security group to your ec2 instance where you can login only from **YOUR IP**. How is that achieved?
 
 Its simple now
 
@@ -145,7 +143,7 @@ resource "aws_vpc_security_group_ingress_rule" "ssh" {
 Since the IP requires a CIDR notation, we use
 
 ```bash
-"${data.external.my_ip.result["ip"]}/32" 
+"${data.external.my_ip.result["ip"]}/32"
 ```
 
 And thats the end of it……. Try it and let me know
